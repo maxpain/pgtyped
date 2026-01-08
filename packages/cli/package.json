@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxpain/pgtyped.git"
+    "url": "git+https://github.com/maxpain/pgtyped.git"
   },
   "files": [
     "lib"
