@@ -1,16 +1,11 @@
 {
-  "name": "@pgtyped/runtime",
+  "name": "@maxpain/pgtyped-runtime",
   "version": "2.4.2",
   "type": "module",
   "exports": {
     ".": {
-      "types": {
-        "import": "./lib/index.d.ts",
-        "require": "./lib/index.d.cts",
-        "default": "./lib/index.d.ts"
-      },
+      "types": "./lib/index.d.ts",
       "import": "./lib/index.js",
-      "require": "./lib/index.cjs",
       "default": "./lib/index.js"
     }
   },
@@ -19,32 +14,30 @@
     "lib"
   ],
   "engines": {
-    "node": ">=14.16"
+    "node": ">=25.0.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adelsz/pgtyped.git"
+    "url": "https://github.com/maxpain/pgtyped.git"
   },
-  "homepage": "https://github.com/adelsz/pgtyped",
+  "homepage": "https://github.com/maxpain/pgtyped",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
-    "build:cjs": "esbuild --bundle --sourcemap --platform=node --target=node14 src/index.ts --minify --external:chalk --external:antlr4ts --outfile=lib/index.cjs",
-    "build": "tsc && npm run build:cjs && cp lib/index.d.ts lib/index.d.cts",
+    "build": "tsc",
     "check": "tsc --noEmit",
     "watch": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
-    "@pgtyped/parser": "^2.4.2",
-    "chalk": "^4.1.0",
-    "debug": "^4.1.1"
+    "@maxpain/pgtyped-parser": "^2.4.2",
+    "chalk": "^4.1.2",
+    "debug": "^4.4.3"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
-    "@types/debug": "^4.1.4",
-    "esbuild": "^0.25.0"
+    "@types/debug": "^4.1.4"
   }
 }

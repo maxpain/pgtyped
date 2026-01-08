@@ -127,13 +127,18 @@ export class TypedSqlTagTransformer {
     return this.generateTypedSQLTagFile(Object.values(this.cache));
   }
 
-  private contentStart = `import { ${this.transform.functionName} as sourceSql } from '@pgtyped/runtime';\n\n`;
-  private contentEnd = [
-    `export function ${this.transform.functionName}(s: string): unknown;`,
-    `export function ${this.transform.functionName}(s: string): unknown {`,
-    `  return sourceSql([s] as any);`,
-    `}`,
-  ];
+  private get contentStart() {
+    return `import { ${this.transform.functionName} as sourceSql } from '@maxpain/pgtyped-runtime';\n\n`;
+  }
+
+  private get contentEnd() {
+    return [
+      `export function ${this.transform.functionName}(s: string): unknown;`,
+      `export function ${this.transform.functionName}(s: string): unknown {`,
+      `  return sourceSql([s] as any);`,
+      `}`,
+    ];
+  }
 
   private async generateTypedSQLTagFile(typeDecsSets: TypeDeclarationSet[]) {
     console.log(`Generating ${this.fullFileName}...`);

@@ -7,9 +7,9 @@ import {
   isImport,
   MappableType,
   Type,
-} from '@pgtyped/query';
+} from '@maxpain/pgtyped-query';
 import os from 'os';
-import { AliasedType, EnumType } from '@pgtyped/query/lib/type.js';
+import { AliasedType, EnumType } from '@maxpain/pgtyped-query/lib/type.js';
 import path from 'path';
 
 const String: Type = { name: 'string' };
@@ -194,7 +194,7 @@ export function declareImport(
 
   const parts = ['import'];
 
-  if (from !== '@pgtyped/runtime') {
+  if (from !== '@maxpain/pgtyped-runtime') {
     parts.push('type');
   }
 

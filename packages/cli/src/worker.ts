@@ -1,5 +1,5 @@
-import { startup } from '@pgtyped/query';
-import { AsyncQueue } from '@pgtyped/wire';
+import { startup } from '@maxpain/pgtyped-query';
+import { AsyncQueue } from '@maxpain/pgtyped-wire';
 import fs from 'fs-extra';
 import nun from 'nunjucks';
 import path from 'path';
@@ -57,7 +57,7 @@ export async function getTypeDecs({
   if (transform.mode === 'sql') {
     // Second parameter has no effect here, we could have used any value
     types.use(
-      { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+      { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
       TypeScope.Return,
     );
   }

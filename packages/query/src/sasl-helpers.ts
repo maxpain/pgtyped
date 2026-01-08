@@ -1,7 +1,7 @@
 /**
  * SASL-helpers for authentication using SASL
  */
-import { cString } from '@pgtyped/wire';
+import { cString } from '@maxpain/pgtyped-wire';
 import crypto from 'crypto';
 
 export function createInitialSASLResponse(): {
@@ -143,7 +143,7 @@ function extractVariablesFromSASLContinueServerMessage(data: string): {
 function xorBuffers(a: Buffer, b: Buffer): Buffer {
   if (!Buffer.isBuffer(a)) a = Buffer.from(a);
   if (!Buffer.isBuffer(b)) b = Buffer.from(b);
-  const res = [];
+  const res: number[] = [];
   if (a.length > b.length) {
     for (let i = 0; i < b.length; i++) {
       res.push(a[i] ^ b[i]);
@@ -153,11 +153,11 @@ function xorBuffers(a: Buffer, b: Buffer): Buffer {
       res.push(a[j] ^ b[j]);
     }
   }
-  return Buffer.from(res);
+  return Buffer.from(res) as Buffer;
 }
 /* tslint:enable:no-bitwise */
-function createHMAC(key: Buffer, msg: string | Buffer) {
-  return crypto.createHmac('sha256', key).update(msg).digest();
+function createHMAC(key: Buffer, msg: string | Buffer): Buffer {
+  return crypto.createHmac('sha256', key).update(msg).digest() as Buffer;
 }
 
 function Hi(password: Buffer, saltBytes: Buffer, iterations: number) {

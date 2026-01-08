@@ -1,5 +1,5 @@
-import { TSQueryAST, assert } from '@pgtyped/parser';
-import { Param, ParamKey, ParamType } from '@pgtyped/parser';
+import { TSQueryAST, assert } from '@maxpain/pgtyped-parser';
+import { Param, ParamKey, ParamType } from '@maxpain/pgtyped-parser';
 import {
   DictArrayParameter,
   DictParameter,

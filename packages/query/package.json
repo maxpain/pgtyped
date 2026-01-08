@@ -1,5 +1,5 @@
 {
-  "name": "@pgtyped/query",
+  "name": "@maxpain/pgtyped-query",
   "version": "2.4.2",
   "type": "module",
   "exports": {
@@ -16,14 +16,14 @@
     "lib"
   ],
   "engines": {
-    "node": ">=14.16"
+    "node": ">=25.0.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adelsz/pgtyped.git"
+    "url": "https://github.com/maxpain/pgtyped.git"
   },
-  "homepage": "https://github.com/adelsz/pgtyped",
+  "homepage": "https://github.com/maxpain/pgtyped",
   "publishConfig": {
     "access": "public"
   },
@@ -34,10 +34,10 @@
     "watch": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
-    "@pgtyped/runtime": "^2.4.2",
-    "@pgtyped/wire": "^2.4.2",
-    "chalk": "^4.1.0",
-    "debug": "^4.1.1"
+    "@maxpain/pgtyped-runtime": "^2.4.2",
+    "@maxpain/pgtyped-wire": "^2.4.2",
+    "chalk": "^4.1.2",
+    "debug": "^4.4.3"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",

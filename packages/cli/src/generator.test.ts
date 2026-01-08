@@ -1,6 +1,6 @@
-import { parseSQLFile, TSQueryAST } from '@pgtyped/parser';
-import { IQueryTypes } from '@pgtyped/query/lib/actions.js';
-import { ParameterTransform } from '@pgtyped/runtime';
+import { parseSQLFile, TSQueryAST } from '@maxpain/pgtyped-parser';
+import { IQueryTypes } from '@maxpain/pgtyped-query/lib/actions.js';
+import { ParameterTransform } from '@maxpain/pgtyped-runtime';
 import { pascalCase } from 'pascal-case';
 import { ParsedConfig } from './config.js';
 import {
@@ -69,7 +69,7 @@ describe('query-to-interface translation', () => {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -78,7 +78,7 @@ describe('query-to-interface translation', () => {
         types,
         partialConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -304,7 +304,7 @@ export interface IDeleteUsersQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -313,7 +313,7 @@ export interface IDeleteUsersQuery {
         types,
         { camelCaseColumnNames: true, hungarianNotation: true } as ParsedConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -383,7 +383,7 @@ export interface IGetNotificationsQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -392,7 +392,7 @@ export interface IGetNotificationsQuery {
         types,
         { camelCaseColumnNames: true, hungarianNotation: true } as ParsedConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -462,7 +462,7 @@ export interface IGetNotificationsQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -471,7 +471,7 @@ export interface IGetNotificationsQuery {
         types,
         { nonEmptyArrayParams: true, hungarianNotation: true } as ParsedConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -541,7 +541,7 @@ export interface IGetNotificationsQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -550,7 +550,7 @@ export interface IGetNotificationsQuery {
         types,
         { nonEmptyArrayParams: true, hungarianNotation: true } as ParsedConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -693,7 +693,7 @@ export interface IInsertNotificationsQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -702,7 +702,7 @@ export interface IInsertNotificationsQuery {
         types,
         partialConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -768,7 +768,7 @@ export interface IGetNotificationsQuery {
       const types = new TypeAllocator(TypeMapping());
       // Test out imports
       types.use(
-        { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+        { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
         TypeScope.Return,
       );
       const result = await queryToTypeDeclarations(
@@ -777,7 +777,7 @@ export interface IGetNotificationsQuery {
         types,
         partialConfig,
       );
-      const expectedTypes = `import { PreparedQuery } from '@pgtyped/runtime';
+      const expectedTypes = `import { PreparedQuery } from '@maxpain/pgtyped-runtime';
 
 export type PayloadType = 'dynamite' | 'message';
 
@@ -874,7 +874,7 @@ test(`Fail on anonymous column return type`, async () => {
   const types = new TypeAllocator(TypeMapping());
   // Test out imports
   types.use(
-    { name: 'PreparedQuery', from: '@pgtyped/runtime' },
+    { name: 'PreparedQuery', from: '@maxpain/pgtyped-runtime' },
     TypeScope.Return,
   );
   const result = await queryToTypeDeclarations(

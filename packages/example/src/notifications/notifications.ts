@@ -1,4 +1,4 @@
-import { sql } from '@pgtyped/runtime';
+import { sql } from '@maxpain/pgtyped-runtime';
 import {
   IInsertNotificationQuery,
   IInsertNotificationsQuery,

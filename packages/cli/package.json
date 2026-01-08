@@ -1,5 +1,5 @@
 {
-  "name": "@pgtyped/cli",
+  "name": "@maxpain/pgtyped-cli",
   "version": "2.4.3",
   "type": "module",
   "main": "lib/index.js",
@@ -12,15 +12,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adelsz/pgtyped.git"
+    "url": "https://github.com/maxpain/pgtyped.git"
   },
   "files": [
     "lib"
   ],
   "engines": {
-    "node": ">=14.16"
+    "node": ">=25.0.0"
   },
-  "homepage": "https://github.com/adelsz/pgtyped",
+  "homepage": "https://github.com/maxpain/pgtyped",
   "publishConfig": {
     "access": "public"
   },
@@ -34,13 +34,13 @@
     "pgtyped": "lib/index.js"
   },
   "dependencies": {
-    "@pgtyped/parser": "^2.4.2",
-    "@pgtyped/query": "^2.4.2",
-    "@pgtyped/wire": "^2.4.2",
+    "@maxpain/pgtyped-parser": "^2.4.2",
+    "@maxpain/pgtyped-query": "^2.4.2",
+    "@maxpain/pgtyped-wire": "^2.4.2",
     "camel-case": "^5.0.0",
-    "chalk": "^4.0.0",
-    "chokidar": "^4.0.0",
-    "debug": "^4.1.1",
+    "chalk": "^4.1.2",
+    "chokidar": "^5.0.0",
+    "debug": "^4.4.3",
     "fp-ts": "^2.5.3",
     "fs-extra": "^11.0.0",
     "glob": "^11.0.0",
